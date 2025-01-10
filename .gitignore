@@ -1,0 +1,5 @@
+/src/migrations
+/src/instance
+*.pyc
+*cache*
+.idea/
