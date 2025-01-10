@@ -2,7 +2,7 @@
 models a python module to concentrate the definition from all the models to be use into the ORM and microservice.
 """
 from datetime import datetime
-from src.create_app import db
+from create_app import db
 
 
 class User(db.Model):

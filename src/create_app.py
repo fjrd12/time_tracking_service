@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_restx import Api
-from src.config import Config
+from config import Config
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -27,14 +27,14 @@ def create_app():
     api.init_app(app)
 
     with app.app_context():
-        from src.models import User, Task, Category, TimeTrackingRequest
-        from src.routes import api_bp, user_ns, category_ns
+        from models import User, Task, Category, TimeTrackingRequest
+        from routes import api_bp, user_ns, category_ns
 
         app.register_blueprint(api_bp)
         api.add_namespace(user_ns, path='/api/users')
         api.add_namespace(category_ns, path='/api/categories')
 
-        from src.admin import setup_admin
+        from admin import setup_admin
         setup_admin(app)
 
     return app

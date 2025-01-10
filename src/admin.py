@@ -1,7 +1,7 @@
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-from src.models import User, Task, Category, TimeTrackingRequest
-from src.create_app import db
+from models import User, Task, Category, TimeTrackingRequest
+from create_app import db
 
 
 def setup_admin(app):

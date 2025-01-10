@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_restx import Resource, fields, Namespace
-from src.create_app import db, api
-from src.models import User, Task, Category, TimeTrackingRequest
+from create_app import db, api
+from models import User, Task, Category, TimeTrackingRequest
 from sqlalchemy.sql import func
 
 api_bp = Blueprint('api', __name__)
